@@ -55,5 +55,28 @@ group by pizza_size
 order by percentage_sale_by_size desc
 
 
+SELECT Top 5 pizza_name, SUM(total_price) AS Total_Revenue
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Revenue ASC
 
+SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Pizza_Sold DESC
+
+SELECT TOP 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Pizza_Sold ASC
+
+SELECT Top 5 pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Orders DESC
+
+SELECT Top 5 pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Orders ASC
 
